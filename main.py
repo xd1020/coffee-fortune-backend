@@ -64,6 +64,7 @@ Kahve fincanını dikkatle incele ve fal yorumunu yap.
         return {
             "fortune": fortune_text
         }
+        
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
