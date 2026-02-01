@@ -42,21 +42,22 @@ Kahve fincanını dikkatle incele ve fal yorumunu yap.
 
         # 4️⃣ OpenAI Vision çağrısı
         response = client.responses.create(
-            model="gpt-4.1-mini",
-            input=[
+    model="gpt-4.1-mini",
+    input=[
+        {
+            "role": "user",
+            "content": [
+                {"type": "input_text", "text": prompt},
                 {
-                    "role": "user",
-                    "content": [
-                        {"type": "input_text", "text": prompt},
-                        {
-                            "type": "input_image",
-                            "image_url": f"data:image/jpeg;base64,{image_base64}"
-                        }
-                    ],
+                    "type": "input_image",
+                    "image_url": f"data:image/jpeg;base64,{image_base64}"
                 }
             ],
-            max_output_tokens=300,
-        )
+        }
+    ],
+    max_output_tokens=300,
+)
+
 
         # 5️⃣ AI cevabını al
         fortune_text = response.output_text
