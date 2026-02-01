@@ -50,7 +50,7 @@ Kahve fincanını dikkatle incele ve fal yorumunu yap.
                         {"type": "input_text", "text": prompt},
                         {
                             "type": "input_image",
-                            "image_base64": image_base64
+                            "image_url": f"data:image/jpeg;base64,{image_base64}"
                         }
                     ],
                 }
